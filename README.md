@@ -20,3 +20,5 @@ We verifiy if the post is already in the database (its score has already been ca
   "content": "test content"
 }
 ```
+
+# Authors: Brinzila Maria, Alexandra Serdenciuc
