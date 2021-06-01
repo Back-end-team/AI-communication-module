@@ -59,23 +59,6 @@ public class AiService {
      * @return the score
      */
     public String calculateScore(AiEntity aiEntity) throws IOException {
-        // Process p1 = Runtime.getRuntime().exec("python3 classification.py " + aiEntity.getContent());
-
-
-        /*
-        * For my fellow reader
-        *
-        * Dear friend,
-        * the app works as expected. Maybe on the cloud too. I don't fucking know tho.
-        * Good luck with it if you ever stumble upon this :)
-        *
-        * Best wishes,
-        * myself from the past
-        * */
-
-
-
-
         FileWriter input = new FileWriter("input.txt");
 
         input.write(aiEntity.getContent());
@@ -84,11 +67,13 @@ public class AiService {
         // Process p1 = Runtime.getRuntime().exec("python3 classification.py");
         Process p1 = Runtime.getRuntime().exec("python3 test.py");
         try {
-            p1.waitFor();//wait for py script to finish
+            p1.waitFor(); //wait for py script to finish
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        
         Scanner in= new Scanner(new File("scor.txt"));
+        
         String score1 = "";
         try {
             score1 = in.nextLine();
